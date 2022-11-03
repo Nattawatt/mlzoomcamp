@@ -6,9 +6,17 @@ Fimd more : [mlzoomcamp](https://github.com/alexeygrigorev/mlbookcamp-code)
 # **Description of the problem**
 **This is simulated situation**
 
-I work at a credit card company. Now a day, on the digital edge our customers always buy stuff on the internet and we got a lot of complaints they didn't do the transaction.
+Nowadays, there is a huge increase in online credit card payment transactions. But among those transactions  Fraud transactions are also included, such as erroneous clicks from customer, hacks, and system error.
 
-I use the data from our customer to create a model to predict that the transaction is fraudulent, and it will notify the customer to confirm that transaction before it is processed.
+I use customer transactions data to build a model for predicting which transaction might be fraud, and notify the customer to confirm the transaction before it is processed.
+
+![Alt text](image/businessflow.jpg)
+
+This diagram show how model can solve this problems.
+
+If model predict fraud it will message to customer to check that transaction.
+
+If they didn't do it. They should contact customer service. otherwise don't care the mesaage.
 
 ## **Credit Card Transactions Fraud Detection Dataset**
 This is a simulated credit card transaction from kaggle.com

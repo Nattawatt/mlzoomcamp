@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 pandas = "*"
+pyarrow = "*"
+fastparquet = "*"
 
 [dev-packages]
 ipykernel = "*"
