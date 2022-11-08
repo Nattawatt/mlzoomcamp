@@ -1,0 +1,10 @@
+service : "predict.py:svc"
+labels :
+    owner : fraud-team
+    project : fraud
+include :
+- "predict.py"
+python:
+    packages:
+    - sklearn 
+    - pydantic
