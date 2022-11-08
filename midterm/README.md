@@ -44,10 +44,11 @@ Check the process below : **How to run the project**
 # how to run the project
 ## 0. Clone this repo
 ```console
-git https://github.com/Nattawatt/mlzoomcamp.git
+git clone https://github.com/Nattawatt/mlzoomcamp.git
 ```
 ## 1. Dowload Dataset
 [Dowload](https://www.kaggle.com/datasets/kartik2112/fraud-detection?select=fraudTrain.csv)
+![Alt text](image/download.gif)
 
 ## 2. run command pipenv install
 ```console
