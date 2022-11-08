@@ -21,8 +21,11 @@ If they didn't do it. They should contact customer service. otherwise don't care
 ## **Credit Card Transactions Fraud Detection Dataset**
 This is a simulated credit card transaction from kaggle.com
 
-It has 2 datasets, First is training and second is testing. It has 21 features and 1 target.
-I will EDA it in notebook.
+It has 2 datasets, First is `fraudTrain.csv` and second is `fraudTest.csv`
+
+but I will use only Training data and split to train val test.
+
+It has 21 features and 1 target. I will experiment in `notebook.ipynb`.
 
 Find more : [kaggle](https://www.kaggle.com/datasets/kartik2112/fraud-detection?select=fraudTrain.csv)
 
@@ -46,8 +49,9 @@ Check the process below : **How to run the project**
 ```console
 git clone https://github.com/Nattawatt/mlzoomcamp.git
 ```
-## 1. Dowload Dataset
-[Dowload](https://www.kaggle.com/datasets/kartik2112/fraud-detection?select=fraudTrain.csv)
+## 1. Dowload Dataset : [dowload](https://www.kaggle.com/datasets/kartik2112/fraud-detection?select=fraudTrain.csv)
+
+
 ![Alt text](image/download.gif)
 
 ## 2. run command pipenv install
@@ -103,11 +107,12 @@ bentoml serve --production --reload
 ```
 ![Alt text](image/servelocal.JPG)
 
-## 2. test it on SWAGG UI
-```console
+## 2. visit  SWAGG UI
+
 http://localhost:3000/
-```
-copy example parameters from transaction_sample*.json file
+
+
+copy example parameters from `transaction_sample*.json` file
 and you can change it by your self
 
 ![Alt text](image/SWAGGUI1.JPG)
