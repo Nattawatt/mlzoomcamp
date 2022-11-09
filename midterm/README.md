@@ -3,7 +3,14 @@ This project is a midterm project of Machine Learning Zoomcamp Course. The goal 
 
 Fimd more : [mlzoomcamp](https://github.com/alexeygrigorev/mlbookcamp-code)
 
-# **Description of the problem**
+# Table of contents
+1. [Description of project](#description)
+2. [Solution](#solution)
+3. [How to run](#how)
+4. [Deploy in local](#local)
+5. [Deploy to Google Cloud](#gcp)
+
+# **Description of project** <a name="description"></a>
 **This is simulated situation**
 
 There is a significant increase in online credit card payment transactions nowadays. But among those transactions there are also fraud transaction that can be caused by some situation, such as hacks and phishing. 
@@ -28,7 +35,7 @@ It has 21 features and 1 target. I will experiment in `notebook.ipynb`.
 
 Find more : [kaggle](https://www.kaggle.com/datasets/kartik2112/fraud-detection?select=fraudTrain.csv)
 
-# Solution
+# Solution <a name="solution"></a>
 **model pharse**
 
 I create a supervised model to predict which transaction is fraud.
@@ -43,13 +50,12 @@ BentoML : [BentoML](https://www.bentoml.com/)
 
 Check the process below : **How to run the project**
 
-# how to run the project
+# How to run <a name="how"></a>
 ## 0. Clone this repo
 ```console
 git clone https://github.com/Nattawatt/mlzoomcamp.git
 ```
 ## 1. Dowload Dataset : [dowload](https://www.kaggle.com/datasets/kartik2112/fraud-detection?select=fraudTrain.csv)
-
 
 ![Alt text](image/download.gif)
 
@@ -98,7 +104,7 @@ python:
     - scikit-learn
     - pydantic
 ```
-# Build on Local
+# Deploy in local <a name="local"></a>
 
 ## 1. build service
 ```console
@@ -120,7 +126,7 @@ click **Execute**
 
 ![Alt text](image/SWAGGUI2.JPG)
 
-# Build on Google Cloud
+# Deploy to Google Cloud <a name="gcp"></a>
 ## 1.Build docker image
 ```console
 pipenv shell
