@@ -1,22 +1,21 @@
 # **mlzoomcamp midterm project**
-This is project about midterm of mlzoomcamp camp
+This project is a midterm project of Machine Learning Zoomcamp Course. The goal of this project is to build a ML model for fraud prediction.
 
 Fimd more : [mlzoomcamp](https://github.com/alexeygrigorev/mlbookcamp-code)
 
 # **Description of the problem**
 **This is simulated situation**
 
-Nowadays, there is a huge increase in online credit card payment transactions. But among those transactions  Fraud transactions are also included, such as erroneous clicks from customer, hacks, and system error.
+There is a significant increase in online credit card payment transactions nowadays. But among those transactions there are also fraud transaction that can be caused by some situation, such as hacks and phishing. 
 
-I use customer transactions data to build a model for predicting which transaction might be fraud, and notify the customer to confirm the transaction before it is processed.
+I use customer transactions data to build a model for prediction which transaction might be fraud, and notify the customer to confirm the transaction before it is processed.
 
 ![Alt text](image/businessflow.jpg)
 
-This diagram show how model can solve this problems.
+This diagram shows how this model can help prevent fraud transactions.
 
-If model predict fraud it will message to customer to check that transaction.
-
-If they didn't do it. They should contact customer service. otherwise don't care the mesaage.
+When the transaction is predicted to be fraud it will send message to customers to confirm the transaction.
+If they didn't make the transaction, they can deny the transaction and contact customer service.
 
 ## **Credit Card Transactions Fraud Detection Dataset**
 This is a simulated credit card transaction from kaggle.com
@@ -96,7 +95,7 @@ include :
 - "predict.py"
 python:
     packages:
-    - sklearn 
+    - scikit-learn
     - pydantic
 ```
 # Build on Local
@@ -121,6 +120,71 @@ click **Execute**
 
 ![Alt text](image/SWAGGUI2.JPG)
 
-# Build on Google cloud
+# Build on Google Cloud
+## 1.Build docker image
+```console
+pipenv shell
+```
+```console
+bentoml build
+```
 
-**TODO**
+*Open docker deamon first for windows. Then build image
+```console
+bentoml containerize payment_fraud:<tag> --platform linux/amd64
+```
+
+
+check your image
+```console
+docker image list
+```
+![Alt text](image/dockerimage.JPG)
+
+**This process after this require gcp accout**
+## 2. Prepare for gcloud
+```console
+gcloud init
+```
+
+```console
+gcloud config set proejct mlzoomcamp-ntw
+```
+## 3. Authen container registry
+https://cloud.google.com/container-registry/docs/advanced-authentication#gcloud_2
+
+## 4. Push an images to gcp
+![Alt text](image/dockerimage.JPG)
+
+```console
+docker tag payment_fraud:<tag> gcr.io/mlzoomcamp-ntw/payment-fraud
+```
+
+```console
+docker push gcr.io/mlzoomcamp-ntw/payment-fraud
+```
+
+![Alt text](image/dockerpush.JPG)
+
+![Alt text](image/gcpimage.JPG)
+
+## 5. Deploy to Cloud run
+```
+gcloud run deploy payment-fraud-server --image gcr.io/mlzoomcamp-ntw/payment-fraud --port 3030 --platform managed --region asia-southeast1
+```
+![Alt text](image/cloudrun.JPG)
+
+## 6. Test Endpoint
+For anyone who can't acess to url, I will not open for a while.
+![Alt text](image/cloudrun2.JPG)
+
+visit : https://payment-fraud-server-fwr7ea4tjq-as.a.run.app/
+
+![Alt text](image/cloud_run_test1.gif)
+
+![Alt text](image/cloud_run_test2.gif)
+
+
+# END
+
+**THANK YOU** 

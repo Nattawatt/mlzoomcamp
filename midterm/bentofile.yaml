@@ -6,5 +6,5 @@ include :
 - "predict.py"
 python:
     packages:
-    - sklearn 
+    - scikit-learn
     - pydantic
