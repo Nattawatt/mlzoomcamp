@@ -1,7 +1,7 @@
 # **mlzoomcamp midterm project**
 This project is a midterm project of Machine Learning Zoomcamp Course. The goal of this project is to build a ML model for fraud prediction.
 
-Fimd more : [mlzoomcamp](https://github.com/alexeygrigorev/mlbookcamp-code)
+Find more : [mlzoomcamp](https://github.com/alexeygrigorev/mlbookcamp-code)
 
 # Table of contents
 1. [Description of project](#description)
@@ -27,11 +27,11 @@ If they didn't make the transaction, they can deny the transaction and contact c
 ## **Credit Card Transactions Fraud Detection Dataset**
 This is a simulated credit card transaction from kaggle.com
 
-It has 2 datasets, First is `fraudTrain.csv` and second is `fraudTest.csv`
+There are 2 datasets, `fraudTrain.csv` and `fraudTest.csv`
 
 but I will use only Training data and split to train val test.
 
-It has 21 features and 1 target. I will experiment in `notebook.ipynb`.
+There are 21 features and 1 target. I will experiment in `notebook.ipynb`.
 
 Find more : [kaggle](https://www.kaggle.com/datasets/kartik2112/fraud-detection?select=fraudTrain.csv)
 
@@ -44,7 +44,7 @@ I will use multiple models to select which model is the best for this dataset an
 
 **model serving**
 
-I will use BentoML for containerization and deploy the API of a model to Google Cloud with Cloud Run Service.
+I will use BentoML for containerization and deploy the API of a model to Google Cloud by Cloud Run Service.
 
 BentoML : [BentoML](https://www.bentoml.com/)
 
@@ -63,7 +63,7 @@ git clone https://github.com/Nattawatt/mlzoomcamp.git
 ```console
 pipenv install
 ```
-if can't. run install pipenv before run agian.
+if can't, run install pipenv before running this command agian.
 ```console
 pip install pipenv
 ```
@@ -72,7 +72,7 @@ and then checkin to venv
 pipenv shell
 ```
 
-## 3. run train.py for train model
+## 3. run train.py to train model
 ```console
 python train.py
 ```
@@ -112,13 +112,12 @@ bentoml serve --production --reload
 ```
 ![Alt text](image/servelocal.JPG)
 
-## 2. visit  SWAGG UI
+## 2. visit SWAGG UI
 
 http://localhost:3000/
 
-
 copy example parameters from `transaction_sample*.json` file
-and you can change it by your self
+file and you can change some params by yourself.
 
 ![Alt text](image/SWAGGUI1.JPG)
 
@@ -181,10 +180,12 @@ gcloud run deploy payment-fraud-server --image gcr.io/mlzoomcamp-ntw/payment-fra
 ![Alt text](image/cloudrun.JPG)
 
 ## 6. Test Endpoint
-For anyone who can't acess to url, I will not open for a while.
+
 ![Alt text](image/cloudrun2.JPG)
 
 visit : https://payment-fraud-server-fwr7ea4tjq-as.a.run.app/
+
+it may not work, I will stop it to avoid costs.
 
 ![Alt text](image/cloud_run_test1.gif)
 
